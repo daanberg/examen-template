@@ -16,22 +16,22 @@ if(isset($_POST['register'])){
         </div>
 
 
-
+<form method="post"> 
         <div class="mb-1">
             <label for="" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ik spit die bars, want die snicker was over de datum">
+            <input type="email" name="Email" class="form-control" id="exampleFormControlInput1" placeholder="Ik spit die bars, want die snicker was over de datum">
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Ze zegt ik heb brains, ik ben smartie">
+            <input type="password" name="Password" class="form-control" id="exampleFormControlInput1" placeholder="Ze zegt ik heb brains, ik ben smartie">
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Confirm your password</label>
-            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="ik koop geen tony's, want ik let op mn moneys">
+            <input type="password" name="conf-password" class="form-control" id="exampleFormControlInput1" placeholder="ik koop geen tony's, want ik let op mn moneys">
         </div>
-        <button type="submit" class="btn btn-primary" name="register">Registreer uw bars</button>
+        <input type="submit" name="register" value="Registreer uw barz" class="btn btn-primary">
     </div>
-
+</form>
 
 <?php
 require_once 'partial/footer.php';

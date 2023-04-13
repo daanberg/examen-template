@@ -20,9 +20,9 @@ $user = new User();
         <tr>
             <td><?php echo $b->ID ?></td>
             <td><?php echo $b->Title ?></td>
-            <td><?php echo $user->getAuthorNameById($b->user_id)->name; ?></td>
-            <td><a>Hoi</a></td>
-            <td><a>Hoi</a></td>
+            <td><?php echo $b->user_id ?></td>
+            <td><a href="editBar.php?bar=<?= $b->ID ?>" class="border btn-light nav-link text-primary">Edit</a></td>
+            <td><a >Hoi</a></td>
         </tr>
 
         <?php } ?>

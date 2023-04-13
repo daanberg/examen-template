@@ -36,7 +36,7 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
                 </div>
 	    		<input type="submit" name="login"  value="Login" class="btn btn-primary">
 	    	</form>
-	    	<a href="registratie.php">Registreren</a>
+	    	<button class=" mt-2 btn border btn-light btn-sm"><a href="registratie.php" class="nav-link">Registreren</a></button>
     	</section>
     </main>
 

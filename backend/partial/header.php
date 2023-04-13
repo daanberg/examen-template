@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="admin.php">Home</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -29,10 +29,10 @@
                         <a class="nav-link" href="#">Webshop</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="admin.php">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="login.php">Inloggen</a>
+                        <a class="nav-link" href="#">Uitloggen</a>
                         </li>
                     </ul>
                 </div>

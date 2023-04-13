@@ -77,7 +77,17 @@ Class Bars extends DbConfig {
         } 
     }
 
+    public function deleteBar($ID){
+        $sql = "DELETE FROM bars WHERE ID = :ID";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":ID", $ID);
+        if($stmt->execute()){
+            header("Location: AllBars.php");
+        }else{
+            header("Location: admin.php");
 
+        }
+     }
 
 
 

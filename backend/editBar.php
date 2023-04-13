@@ -9,6 +9,10 @@ $b = $bar->getBar($_GET['bar']);
 if(isset($_POST['updateBar'])){
     echo $bar->updateBar($_GET['bar'], $_POST['Title'], $_POST['Description']);
 }
+
+if(isset($_POST['deleteBar'])){
+    echo $bar->deleteBar($_GET['bar']);
+}
 ?>
 
 <div class="container">

@@ -51,6 +51,14 @@ Class User extends DbConfig {
             echo $e->getMessage();
         }
     }
+
+    public function getAuthorNameById($ID){
+        $sql = "SELECT concat(First_Name, ' ', Last_Name) AS name FROM users WHERE ID = :ID";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":ID", $ID);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
 }
 
 ?>

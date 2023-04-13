@@ -4,10 +4,10 @@ require_once 'DbConfig.php';
 Class User extends DbConfig {
 
 
-    public function getUser($username){
-        $sql = "SELECT * FROM users WHERE username = :username";
+    public function getUser($Email){
+        $sql = "SELECT * FROM users WHERE Email = :Email";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":Email", $Email);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
@@ -35,7 +35,7 @@ Class User extends DbConfig {
 
     public function login($data){
         try{
-            $user = $this->getUser($data['username']);
+            $user = $this->getUser($data['Email']);
             if(!$user){
                 throw new Exception("Gebruiker bestaat niet.");
             }
@@ -44,7 +44,7 @@ Class User extends DbConfig {
             }
             session_start();
             $_SESSION['ingelogd'] = true;
-            $_SESSION['username'] = $user->username;
+            $_SESSION['Email'] = $user->Email;
             $_SESSION['user_id'] = $user->ID;
             header("Location: backend/admin.php");
         }catch(Exception $e){

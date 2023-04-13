@@ -5,12 +5,15 @@ require_once 'backend/class/User.php';
 $user = new User();
 
 if(isset($_POST['login'])){
-	echo $user->login($_POST);
+	echo $user->login($_POST); //stuurt data naar de login functie
 }
 
 
+session_start();
+if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
+	header("Location: ./backend/admin.php"); //als je ingelogt ben wordt je geredirect naar dashboard ipv opnieuw inloggen
+}
 
-var_dump($_POST);
 ?>
 
     <div class="container mt-5">
@@ -24,31 +27,19 @@ var_dump($_POST);
     	<section class="form">
 	    	<form method="post">
                 <div class="mb-1">
-                    <label for="username" id="username">Gebruikersnaam: </label>
-                    <input type="text" name="username" required><!-- admin -->
+                    <label for="email" id="email" class="form-label">Gebruikersnaam: </label> <!-- Text -->
+                    <input type="email" name="Email" class="form-control" required ><!-- Invoerveld -->
                 </div>
                 <div class="mb-1">
-                    <label for="password">Wachtwoord: </label>
-                    <input type="password" name="password" required>
+                    <label for="password" class="form-label">Wachtwoord: </label>
+                    <input type="password" name="password" class="form-control" required>
                 </div>
-	    		<input type="submit" name="login" value="Login">
+	    		<input type="submit" name="login"  value="Login" class="btn btn-primary">
 	    	</form>
 	    	<a href="registratie.php">Registreren</a>
     	</section>
     </main>
-<!-- <form method="post"> 
-        <div class="mb-1">
-            <label for="" class="form-label">Username</label>
-            <input type="text" name="username" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="" class="form-label">Wachtwoord</label>
-            <input type="password" name="Password" class="form-control">
-        </div>
-    
-        <input type="submit" name="login" value="Login " class="btn btn-primary">
-    </div>
-</form> -->
+
 
 <?php
 require_once 'partial/footer.php';

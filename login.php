@@ -8,33 +8,47 @@ if(isset($_POST['login'])){
 	echo $user->login($_POST);
 }
 
-session_start();
-if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
-	header("Location: ./backend/admin.php");
-}
+
 
 var_dump($_POST);
 ?>
 
     <div class="container mt-5">
         <div>
-            <h1>Login mijn makker</h1>
+            <h1>Login</h1>
         </div>
 
 
-<form method="post"> 
+
+        <main>
+    	<section class="form">
+	    	<form method="post">
+                <div class="mb-1">
+                    <label for="username" id="username">Gebruikersnaam: </label>
+                    <input type="text" name="username" required><!-- admin -->
+                </div>
+                <div class="mb-1">
+                    <label for="password">Wachtwoord: </label>
+                    <input type="password" name="password" required>
+                </div>
+	    		<input type="submit" name="login" value="Login">
+	    	</form>
+	    	<a href="registratie.php">Registreren</a>
+    	</section>
+    </main>
+<!-- <form method="post"> 
         <div class="mb-1">
-            <label for="email" id="email" class="form-label">Email address</label>
-            <input type="email" name="Email" class="form-control" required>
+            <label for="" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" name="Password" class="form-control" id="exampleFormControlInput1" placeholder="Ze zegt ik heb brains, ik ben smartie">
+            <label for="" class="form-label">Wachtwoord</label>
+            <input type="password" name="Password" class="form-control">
         </div>
     
         <input type="submit" name="login" value="Login " class="btn btn-primary">
     </div>
-</form>
+</form> -->
 
 <?php
 require_once 'partial/footer.php';

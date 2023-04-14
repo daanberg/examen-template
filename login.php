@@ -21,13 +21,16 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
             <h1>Login</h1>
         </div>
 
+        <div class="row">
+            <div class="col-lg-7"><h1> Alle Bars</h1></div>
+        </div>
 
 
         <main>
     	<section class="form">
 	    	<form method="post">
                 <div class="mb-1">
-                    <label for="email" id="email" class="form-label">Gebruikersnaam: </label> <!-- Text -->
+                    <label for="email" id="email" class="form-label">Email: </label> <!-- Text -->
                     <input type="email" name="Email" class="form-control" required ><!-- Invoerveld -->
                 </div>
                 <div class="mb-1">
@@ -36,7 +39,7 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
                 </div>
 	    		<input type="submit" name="login"  value="Login" class="btn btn-primary">
 	    	</form>
-	    	<button class=" mt-2 btn border btn-light btn-sm"><a href="registratie.php" class="nav-link ">Registreren</a></button>
+	    	<button class=" mt-2 btn border btn-light btn-sm"><a href="register.php" class="nav-link ">Registreren</a></button>
     	</section>
     </main>
 

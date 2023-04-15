@@ -32,7 +32,7 @@
                         <a class="nav-link" href="admin.php">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Uitloggen</a>
+                        <a href="partial/logout.php" class="nav-link">Logout</a>
                         </li>
                     </ul>
                 </div>

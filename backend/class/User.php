@@ -59,6 +59,14 @@ Class User extends DbConfig {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
+
+    public function logout(){
+        session_start();
+        $_SESSION = null;
+        session_unset();
+        session_destroy();
+        header("Location: ../../index.php");
+    }
 }
 
 ?>

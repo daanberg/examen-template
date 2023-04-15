@@ -13,7 +13,6 @@
         <header>
             <nav>
                 <a href="blogs.php">BLOG</a>
-                <a href="#">CRUD</a>
                 <a href="#">WEBSHOP</a>
             </nav>
         </header>

@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/logincss.css">
     <title>Document</title>
 </head>
     <body>
@@ -15,10 +16,12 @@
             <input type="text" name="username" placeholder="Gebruikersnaam">
             <input type="password" name="password" placeholder="Wachtwoord">
             <button type="submit" name="login">Inloggen</button>
-        </form>
 
         <!-- Registratie-link -->
         <p>Heb je nog geen account? <a href="register.php">Registreer hier</a></p>
+        </form>
+
+
 
         <?php
         session_start();

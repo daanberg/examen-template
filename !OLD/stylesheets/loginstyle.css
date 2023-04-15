@@ -1,0 +1,71 @@
+*{box-sizing:border-box;}
+body, html{margin:0;padding:0;}
+body{
+  background-color:#E8DCD2;
+  font-family:sans-serif;
+}
+#loginform{
+  width:300px;
+  height:350px;
+  background-color:#fff;
+  
+  
+  /* Center like a man */
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-150px;
+  margin-top:-175px;
+  
+  border-radius:5px;
+  padding:5px;
+}
+h2{
+  text-align:center;
+  font-size:42px;
+  color:#333;
+}
+input{display:block;}
+input[type="password"], input[type="email"]{
+  -webkit-transition:border 0.2s ease-in-out;
+  -moz-transition:border 0.2s ease-in-out;
+  -ms-transition:border 0.2s ease-in-out;
+  -o-transition:border 0.2s ease-in-out;
+			
+  border:2px solid #EEE;
+  border-radius:5px;
+  background-color:#EEE;
+  padding:10px;
+  margin:0 auto;
+  margin-top:5px;
+  font-size:18px;
+  font-family:sans-serif;
+  width:270px;
+  outline:none;
+}
+input[type="submit"]{
+  border:0;
+  margin:0 auto;
+  margin-top:15px;
+  background:#9ec6ce;
+  color:#FFF;
+  font-size:18px;
+  padding:10px;
+  border-radius:5px;
+  width:270px;
+  outline:none;
+  cursor:pointer;
+}
+input[type="email"]:focus, input[type="password"]:focus{
+  border:2px solid #9ec6ce;
+}
+input[type="submit"]:hover{
+  
+}
+.warning{
+  padding:10px;
+  margin:10px;
+  text-align:center;
+  color:#666;
+  display:none;
+}

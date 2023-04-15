@@ -1,0 +1,64 @@
+/*Laptop*/
+@media only screen and (min-width:800px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .flex-container > div {
+        background-color: #f1f1f1;
+        margin-top: 5vw;
+        font-size: 1.25rem;
+        max-width: 60vw;
+      }
+    
+    h1 {
+        background-color: #f1f1f1;
+        align-items: center;
+        font-size: 3rem;
+      }
+    }
+    /*tablet*/
+    @media only screen and (max-width:810px) {
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            float: right;
+            margin-right: 10vw;
+          }
+          
+          .flex-container > div {
+            background-color: #f1f1f1;
+            margin-top: 5vw;
+            font-size: 1.25rem;
+            max-width: 60vw;
+          }
+        
+        h1 {
+            align-items: center;
+            font-size: 3rem;
+          }
+        }
+    
+    /*mobiel*/
+    @media only screen and (max-width:500px) {
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .flex-container > div {
+            font-size: 1.25rem;
+            margin-top: 5vw;
+            max-width: 80vw;
+          }
+        
+        h1 {
+            align-items: center;
+            font-size: 2.5rem;
+          }
+    }
+    
+    

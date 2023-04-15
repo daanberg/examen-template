@@ -1,8 +1,6 @@
 *{box-sizing:border-box;}
 body, html{margin:0;padding:0;}
 body{
-  background-color:#E8DCD2;
-  font-family:sans-serif;
 }
 #loginform{
   width:300px;
@@ -39,7 +37,6 @@ input[type="password"], input[type="email"]{
   margin:0 auto;
   margin-top:5px;
   font-size:18px;
-  font-family:sans-serif;
   width:270px;
   outline:none;
 }

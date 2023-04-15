@@ -1,6 +1,5 @@
 <?php
     require_once './backend/class/dbconfig.php';
-    require_once './backend/partial/header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-
-</body>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="./login.php">Login</a>
+        </div>
+    </body>
 </html>

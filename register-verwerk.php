@@ -1,35 +1,29 @@
 <?php
-// Controleer of het registratieformulier is ingediend
+require_once './backend/class/dbconfig.php';
+
 if (isset($_POST['register'])) {
+    // Controleer of de wachtwoorden overeenkomen
+    if ($_POST['password'] !== $_POST['confirm_password']) {
+        echo "Wachtwoorden komen niet overeen!";
+    } else {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
 
-    // Gebruikersinvoer ontvangen en filteren
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm_password']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+        // Controleer of de gebruikersnaam al bestaat
+        $query = "SELECT * FROM users WHERE username='$username'";
+        $result = mysqli_query($conn, $query);
 
-    // Controleer of het wachtwoord en de bevestiging overeenkomen
-    if ($password !== $confirm_password) {
-        echo "Wachtwoord komt niet overeen";
-        exit();
+        if (mysqli_num_rows($result) > 0) {
+            echo "Gebruikersnaam bestaat al!";
+        } else {
+            // Voeg de gebruiker toe aan de database
+            $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+            mysqli_query($conn, $query);
+
+            echo "Account succesvol aangemaakt!";
+            header('Location: ./login.php');
+        }
     }
-
-    // Controleer of de gebruikersnaam al bestaat in de database
-    $sql = "SELECT * FROM users WHERE username='$username'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0) {
-        echo "Gebruikersnaam is al in gebruik";
-        exit();
-    }
-
-    // Voeg de nieuwe gebruiker toe aan de database
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Wachtwoord hashen
-    $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashed_password', '$email')";
-    mysqli_query($conn, $sql);
-
-    // Stuur de gebruiker door naar dashboard.php
-    header("Location: ./dashboard.php");
-    exit();
 }
 ?>

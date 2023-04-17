@@ -19,7 +19,7 @@ Class User extends DbConfig {
                 throw new Exception("Wachtwoorden komen niet overeen.");
             }
             $sql = "INSERT INTO users (Email, Password, Active) VALUES (:Email, :Password, 1 )"; //slaat shit op in db + zet user op actief
-            $encryptedPassword = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]); //password encrypt
+            $encryptedPassword = password_hash($data['Password'], PASSWORD_BCRYPT, ['cost' => 12]); //password encrypt
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindParam(":Email", $data['Email']);
             $stmt->bindParam(":Password", $encryptedPassword);

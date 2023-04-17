@@ -7,6 +7,8 @@ $bar = new Bars();
 if(isset($_POST['Add'])){
 	echo $bar->create($_POST);
 }
+
+
 ?>
 
 <div class="container mt-5">

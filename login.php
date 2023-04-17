@@ -21,10 +21,6 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
             <h1>Login</h1>
         </div>
 
-        <div class="row">
-            <div class="col-lg-7"><h1> Alle Bars</h1></div>
-        </div>
-
 
         <main>
     	<section class="form">
@@ -35,7 +31,7 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
                 </div>
                 <div class="mb-1">
                     <label for="password" class="form-label">Wachtwoord: </label>
-                    <input type="password" name="password" class="form-control" required>
+                    <input type="password" name="Password" class="form-control" required>
                 </div>
 	    		<input type="submit" name="login"  value="Login" class="btn btn-primary">
 	    	</form>

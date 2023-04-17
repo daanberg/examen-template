@@ -13,6 +13,7 @@ if(isset($_POST['updateBar'])){
 if(isset($_POST['deleteBar'])){
     echo $bar->deleteBar($_GET['bar']);
 }
+
 ?>
 
 <div class="container">

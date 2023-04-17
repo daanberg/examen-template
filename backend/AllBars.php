@@ -6,6 +6,7 @@ require_once 'class/User.php';
 $bar = new Bars();
 $user = new User();
 
+
 ?>
 <div class="container">
     <h1>Alle Bars</h1>

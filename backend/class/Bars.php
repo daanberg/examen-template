@@ -89,17 +89,6 @@ Class Bars extends DbConfig {
         }
      }
 
-     public function search($term){
-        $sql = "SELECT * FROM bars WHERE Title like :Title";  // ? placeholder in query
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam("Title", $term);       // insert your variable into the placeholder (still need to add % wildcards)
-        if($stmt->execute()){
-            header("Location: editBar.php?bar= $this->getBar($ID)");
-        }else{
-            echo 'Geen resultaat gevonden';      
-
-        }
-     }
 
 
 

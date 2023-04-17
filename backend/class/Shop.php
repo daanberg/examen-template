@@ -112,6 +112,23 @@ Class Shop extends DbConfig {
         }
      }
 
+     public function search($data){
+        try{
+            $sql = "SELECT * FROM shop WHERE Title LIKE :Title";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindParam(":Title", $data);
+            if($stmt->execute()){
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            }else{
+                echo "Geen zoekresultaten gevonden";
+            }
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+       
+
+     }
+
 
     
 }

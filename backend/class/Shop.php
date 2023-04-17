@@ -100,6 +100,18 @@ Class Shop extends DbConfig {
         } 
     }
 
+    public function deleteProduct($ID){
+        $sql = "DELETE FROM shop WHERE ID = :ID";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":ID", $ID);
+        if($stmt->execute()){
+            header("Location: AllProducts.php");
+        }else{
+            header("Location: admin.php");      
+
+        }
+     }
+
 
     
 }

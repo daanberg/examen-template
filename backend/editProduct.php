@@ -37,7 +37,7 @@ if(isset($_POST['deleteProduct'])){
             <label for="description" class="form-label">Bestandsnaam: </label>
             <input type="text" name="Img_URL" class="form-control" value="<?php echo $s->Img_URL; ?>" required>
         </div>
-            <input type="submit" name="updateProduct" value="Update Bar" class="btn-primary border btn">
-            <input type="submit" name="deleteBar" value="Delete Bar" class="btn-danger border btn">
+            <input type="submit" name="updateProduct" value="Update Product" class="btn-primary border btn">
+            <input type="submit" name="deleteProduct" value="Delete Product" class="btn-danger border btn">
     </form>
 </div>

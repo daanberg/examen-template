@@ -18,5 +18,22 @@ Class Shop extends DbConfig {
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
+    public function create($data){
+        try{
+            $sql = "INSERT INTO shop (Title, Description, Price, Img_URL) VALUES (:Title, :Description, :Price, :Img_URL)";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindParam(":Title", $data['Title']);
+            $stmt->bindParam(":Description", $data['Description']);
+            $stmt->bindParam(":Price", $data['Price']);
+            $stmt->bindParam(":Img_URL", $data['Img_URL']);
+            if(!$stmt->execute()){
+                throw new Exception("Product kon niet aangemaakt worden");
+            }
+            return;
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+    }
+
     
 }

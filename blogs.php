@@ -1,11 +1,14 @@
 <?php
-require_once './backend/class/dbconfig.php';
+
+require_once'./backend/class/dbconfig.php';
+
+// Replace "db_name", "db_user", and "db_password" with your actual database credentials
+$pdo = new PDO('mysql:host=localhost;dbname=template', 'db_user', 'db_password');
 
 // Query to select all blog posts
 $stmt = $pdo->prepare('SELECT * FROM blogs ORDER BY created_at DESC');
 $stmt->execute();
 $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>

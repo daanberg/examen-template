@@ -21,7 +21,7 @@ $user = new User();
         <tr>
             <td><?php echo $b->ID ?></td>
             <td><?php echo $b->Title ?></td>
-            <td><?php echo $b->user_id ?></td>
+            <td><?php echo $user->getAuthorUsernameById($b->ID)->Name;?></td>
             <td><a href="editBar.php?bar=<?= $b->ID ?>" class="border btn-primary nav-link text-white">Edit</a></td>
 
         </tr>

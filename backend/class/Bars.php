@@ -17,10 +17,11 @@ Class Bars extends DbConfig {
 
     public function create($data){
         try{
-            $sql = "INSERT INTO bars (Title, Description, user_id) VALUES (:Title, :Description, 3)";
+            $sql = "INSERT INTO bars (Title, Description, user_id) VALUES (:Title, :Description, :user_id)";
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindParam(":Title", $data['Title']);
             $stmt->bindParam(":Description", $data['Description']);
+            $stmt->bindParam(":user_id", $data['user_id']);
             if(!$stmt->execute()){
                 throw new Exception("Post kon niet aangemaakt worden");
             }

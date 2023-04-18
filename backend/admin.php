@@ -1,6 +1,14 @@
 <?php 
 require_once 'partial/header.php';
+require_once 'class/User.php';
 
+
+session_start();
+
+
+
+        
+    
 
 ?>
 
@@ -14,10 +22,11 @@ require_once 'partial/header.php';
 </head>
 <body>
     <div class="container">
+
         <div class="row justify-content-around text-center">
             <div class="col-lg-3 border bg-light "><a href='AllBars.php' class="nav-link">Bekijk alle Barz </a></div>
             <div class="col-lg-3 border bg-light" ><a href='allProducts.php' class="nav-link">Bekijk alle Producten</a></div>
-            <div class="col-lg-3 border bg-light">Bekijk ...</div>
+            <div class="col-lg-3 border bg-light"><a href='editUser.php?user=<?= $_SESSION['Email'] ?>' class="nav-link">Wijzig uw profiel</a></div>
         </div>
         <div class="row justify-content-around text-center mt-3">
             <div class="col-lg-3 border bg-light"><a href="AddBars.php" class="nav-link">Voeg Barz toe </a></div>

@@ -4,6 +4,8 @@ require_once 'class/Bars.php';
 
 $bar = new Bars();
 
+session_start();
+
 if(isset($_POST['Add'])){
 	echo $bar->create($_POST);
 }
@@ -26,6 +28,10 @@ if(isset($_POST['Add'])){
             <label for="" class="form-label">Korte Uitleg</label>
             <input type="text" name="Description" class="form-control"  placeholder="Ze zegt ik heb brains, ik ben smartie">
         </div>
+        <div class="mb-3">User:</label>
+            <input type="text" name="user_id"  class="form-control" value="<?= $_SESSION['user_id'] ?>">
+        </div>
+        
         
        
         <input type="submit" name="Add" value="Registreer uw bar" class="btn btn-primary">

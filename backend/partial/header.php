@@ -12,7 +12,7 @@
     <body>
         <header>
             <nav>
-                <a href="blogs.php">BLOG</a>
+                <a href=".../class/bars.php">BLOG</a>
                 <a href="#">WEBSHOP</a>
             </nav>
         </header>
